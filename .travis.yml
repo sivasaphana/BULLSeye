@@ -4,6 +4,12 @@ sudo: required
 # Be strict when checking our package
 warnings_are_errors: true
 
+#CHECK
+env:
+  global:
+    - NOT_CRAN=true
+before_install: echo "options(repos = c(CRAN='http://cran.rstudio.com'))" > ~/.Rprofile
+
 # System dependencies for HTTP calling
 apt_packages:
  - libcurl4-openssl-dev
