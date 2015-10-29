@@ -1,3 +1,6 @@
+language: r
+sudo: required
+
 # Sample .travis.yml for R projects.
 #
 # See README.md for instructions, or for more configuration options,
