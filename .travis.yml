@@ -12,10 +12,10 @@ env:
 
 # capturing state, early exit if no integration test is needed
 before_install:
-  - export PATH=$HOME/bin:$HOME/texlive/bin/x86_64-linux:$PATH
+  - export PATH=$HOME/bin:$PATH
   - if [ ${TARGET} = integration ]; then
       if ! make integration-need; then
-        echo "NOTE:"" Integration test skipped. To enable, create a branch named ${TRAVIS_BRANCH} in ${TRAVIS_REPO_SLUG}-examples.";
+        echo "NOTE:"" Integration test skipped.";
         exit 0;
       fi;
     fi
@@ -40,15 +40,11 @@ addons:
 # install dependencies
 install:
   - "[ ! -d ~/bin ] && mkdir ~/bin || true"
-  - "wget -q -O - https://github.com/yihui/crandalf/raw/master/inst/scripts/install-texlive | bash"
-  - "wget -q -O - https://github.com/yihui/crandalf/raw/master/inst/scripts/install-pandoc | bash"
-  - "wget -q -O - http://yihui.name/xran/r-config | bash"
   - Rscript -e "if (!require('devtools')) install.packages('devtools')"
   - Rscript -e "if (!require('sqldf')) install.packages('sqldf')"
   - Rscript -e "if (!require('plyr')) install.packages('plyr')"
   - Rscript -e "if (!require('tcltk2')) install.packages('tcltk2')"
   - Rscript -e 'devtools::install_deps(dep = TRUE); update.packages(.libPaths()[1], ask = FALSE)'
-  - Rscript -e "if (!require('covr')) install.packages('covr')"
 
 cache:
   directories:
@@ -61,10 +57,6 @@ script:
 # deploy to xran after integration tests
 after_success:
   - export R_PKG="$(basename $TRAVIS_REPO_SLUG)"
-  - "[ $TARGET = integration ] && (wget -q -O - http://yihui.name/xran/r-xran | bash)"
 
 after_failure:
   - cp ${RCHECK_DIR}/00check.log $HOME/R
-
-  # run test coverage only for the travis build
-  - "[ $TARGET = travis ] && Rscript -e 'covr::coveralls()'"
