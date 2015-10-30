@@ -31,7 +31,6 @@ Suggests:
 License: GPL
 URL: http://karthicj/BULLSeye/
 BugReports: https://github.com/KarthicJ/BULLSeye/issues
-VignetteBuilder: BULLSeye
 Collate:
     'sample.R'
 RoxygenNote: 5.0.0
