@@ -53,8 +53,6 @@ install:
 cache:
   directories:
   - $HOME/R
-  - $HOME/texlive
-  - $HOME/bin
 
 # run tests
 script:
