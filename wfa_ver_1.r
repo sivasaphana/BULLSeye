@@ -1,6 +1,6 @@
-install.packages("sqldf")
-install.packages("plyr")
-install.packages("tcltk2")
+#install.packages("sqldf")
+#install.packages("plyr")
+#install.packages("tcltk2")
 
 library(sqldf)
 library(plyr)
