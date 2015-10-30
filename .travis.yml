@@ -44,6 +44,9 @@ install:
   - "wget -q -O - https://github.com/yihui/crandalf/raw/master/inst/scripts/install-pandoc | bash"
   - "wget -q -O - http://yihui.name/xran/r-config | bash"
   - Rscript -e "if (!require('devtools')) install.packages('devtools')"
+  - Rscript -e "if (!require('sqldf')) install.packages('sqldf')"
+  - Rscript -e "if (!require('plyr')) install.packages('plyr')"
+  - Rscript -e "if (!require('tcltk2')) install.packages('tcltk2')"
   - Rscript -e 'devtools::install_deps(dep = TRUE); update.packages(.libPaths()[1], ask = FALSE)'
   - Rscript -e "if (!require('covr')) install.packages('covr')"
 
