@@ -1,20 +1,37 @@
-Package: wfa_ver_1.r
-Version: 0.5
-Date: 2015-01-01
-Title: My First Collection of Functions
-Authors@R: c(person("Joe", "Developer", role = c("aut", "cre"),
-		     email = "Joe.Developer@some.domain.net"),
-	      person("Pat", "Developer", role = "aut"),
-	      person("A.", "User", role = "ctb",
-		     email = "A.User@whereever.net"))
-Author: Joe Developer [aut, cre],
-  Pat Developer [aut],
-  A. User [ctb]
-Maintainer: Joe Developer <Joe.Developer@some.domain.net>
-Depends: R (>= 3.2.0), nlme
-Suggests: MASS
-Description: A (one paragraph) description of what
-  the package does and why it may be useful.
-License: GPL (>= 2)
-URL: https://www.r-project.org, http://www.another.url, https://cran.r-project.org
-BugReports: https://pkgname.bugtracker.url
+Package: BULLSeye
+Type: Package
+Title: A General-Purpose Package for Dynamic Report Generation in R
+Version: 1.11.10
+Date: 2015-08-14
+Authors@R: c(
+    person("Karthic", "J", email = "karthic@ymail.com", role = c("aut", "cre"))
+    )
+Maintainer: Karthic J <karthic@ymail.com>
+Description: Provides a general-purpose tool for dynamic report generation in R
+    using Literate Programming techniques.
+Depends:
+    R (>= 3.0.2)
+Imports:
+    evaluate (>= 0.8),
+    digest,
+    formatR,
+    highr,
+    markdown,
+    stringr (>= 0.6),
+    yaml (>= 2.1.5),
+    methods,
+    tools
+Suggests:
+    testit,
+    rgl (>= 0.95.1201),
+    codetools,
+    rmarkdown,
+    XML,
+    RCurl
+License: GPL
+URL: http://karthic.j/BULLSeye/
+BugReports: https://github.com/KarthicJ/BULLSeye/issues
+VignetteBuilder: BULLSeye
+Collate:
+    'sample.R'
+RoxygenNote: 5.0.0
