@@ -29,7 +29,7 @@ Suggests:
     XML,
     RCurl
 License: GPL
-URL: http://karthic.j/BULLSeye/
+URL: http://karthicj/BULLSeye/
 BugReports: https://github.com/KarthicJ/BULLSeye/issues
 VignetteBuilder: BULLSeye
 Collate:
