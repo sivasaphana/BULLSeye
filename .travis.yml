@@ -13,6 +13,7 @@ env:
 # capturing state, early exit if no integration test is needed
 before_install:
   - export PATH=$HOME/bin:$PATH
+  - echo $HOME
   - if [ ${TARGET} = integration ]; then
       if ! make integration-need; then
         echo "NOTE:"" Integration test skipped.";
