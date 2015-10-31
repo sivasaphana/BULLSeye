@@ -5,28 +5,28 @@
 #library(shiny)
 library(sqldf)
 library(plyr)
-library(tcltk2)
+#library(tcltk2)
 
-a <- 1+1
-a
-##data_po <- read.csv("C:/PROJECT/data_po/data_po.csv")
-#projectDir = getwd()
+#a <- 1+1
+#a
+#data_po <- read.csv("C:/PROJECT/data_po/data_po.csv")
+projectDir = getwd()
 
-#codeDir <- file.path(projectDir, 'R')
+codeDir <- file.path(projectDir, 'R')
 
-#data_po <- read.csv(file.path(codeDir,'data_po.csv'))
+data_po <- read.csv(file.path(codeDir,'data_po.csv'))
 
-##View(data_po)
+#View(data_po)
 
-#data_po$Timediff <- as.numeric(difftime(data_po$Complete.Timestamp,data_po$Start.Timestamp,units="hours"))
+data_po$Timediff <- as.numeric(difftime(data_po$Complete.Timestamp,data_po$Start.Timestamp,units="hours"))
 
-#Rolebased <- sqldf("select Role,sum(Timediff) as Duration,count(Role) as Frequency from data_po group by Role")
+Rolebased <- sqldf("select Role,sum(Timediff) as Duration,count(Role) as Frequency from data_po group by Role")
 
-#num <- sqldf("select sum(Frequency) from Rolebased")
-#num <- sum(Rolebased$Frequency)
-#freq <- Rolebased$Frequency
+num <- sqldf("select sum(Frequency) from Rolebased")
+num <- sum(Rolebased$Frequency)
+freq <- Rolebased$Frequency
 
 
-#Rolebased$Frequency_Percentage <- freq/num
+Rolebased$Frequency_Percentage <- freq/num
 
-##View(Rolebased)
+#View(Rolebased)
