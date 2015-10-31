@@ -65,3 +65,4 @@ after_success:
 
 after_failure:
   - cp ${RCHECK_DIR}/00check.log https://github.com/KarthicJ/BULLSeye/R
+  - cat /home/travis/build/KarthicJ/BULLSeye.Rcheck/00check.log
