@@ -12,7 +12,7 @@ library(plyr)
 #data_po <- read.csv("C:/PROJECT/data_po/data_po.csv")
 projectDir = getwd()
 
-codeDir <- file.path(projectDir, 'R')
+codeDir <- file.path(projectDir, 'Data')
 
 data_po <- read.csv(file.path(codeDir,'data_po.csv'))
 
